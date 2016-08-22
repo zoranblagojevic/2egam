@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--virtualType name="Fishpig\CdKey\Model\Resource\CdKey\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cdkey_key</argument>
+            <argument name="resourceModel" xsi:type="string">Fishpig\CdKey\Model\Resource\CdKey</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="cdkey_cdkey_grid_data_source" xsi:type="string">Fishpig\CdKey\Model\Resource\CdKey\Collection</item>
+            </argument>
+        </arguments>
+    </type-->
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="fishpig_cdkey_listing_data_source" xsi:type="string">Fishpig\CdKey\Model\Resource\CdKey\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Fishpig\CdKey\Model\Resource\CdKey\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cdkey_key</argument>
+            <argument name="eventPrefix" xsi:type="string">fishpig_cdkey_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">cdkey_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Fishpig\CdKey\Model\Resource\CdKey</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="customertab" xsi:type="array">
+                    <item name="class" xsi:type="string">Fishpig\CdKey\Ui\DataProvider\Product\Modifier\Customertab</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Fishpig\CdKey\Ui\DataProvider\Product\Modifier\Customertab">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">product_form.product_form</argument>
+        </arguments>
+    </type>
+</config>

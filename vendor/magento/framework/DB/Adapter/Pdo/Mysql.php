@@ -1990,6 +1990,7 @@ class Mysql extends \Zend_Db_Adapter_Pdo_Mysql implements AdapterInterface
             implode(",\n", $sqlFragment),
             implode(" ", $tableOptions)
         );
+        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($sql,true));
         $result = $this->query($sql);
         $this->resetDdlCache($table->getName(), $table->getSchema());
 
