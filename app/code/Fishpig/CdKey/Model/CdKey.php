@@ -12,9 +12,10 @@ use Magento\Framework\Model\AbstractModel;
 
 class CdKey extends AbstractModel
 {
-    /**
-     * Define resource model
-     */
+
+    const STATUS_AVAILABLE = 1;
+    const STATUS_NOT_AVAILABLE = 0;
+
     protected function _construct()
     {
         $this->_init('Fishpig\CdKey\Model\Resource\CdKey');

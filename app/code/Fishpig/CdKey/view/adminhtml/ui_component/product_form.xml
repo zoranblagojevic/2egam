@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!--fieldset name="test_fieldset_name">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">field set label as displayed in UI</item>
+                <item name="sortOrder" xsi:type="number">500</item>
+            </item>
+        </argument>
+        <fieldset name="test_nested_fieldset_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Nested fieldset Label as displayed in UI</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <field name="cdkey_is_preorder">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="test_field_option1" xsi:type="string">test_value_string</item>
+                        <item name="test_field_option2" xsi:type="number">11</item>
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
+    </fieldset-->
+</form>

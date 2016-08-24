@@ -30,7 +30,7 @@
         </arguments>
     </type>
 
-    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+    <!--virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
         <arguments>
             <argument name="modifiers" xsi:type="array">
                 <item name="customertab" xsi:type="array">
@@ -39,10 +39,42 @@
                 </item>
             </argument>
         </arguments>
-    </virtualType>
-    <type name="Fishpig\CdKey\Ui\DataProvider\Product\Modifier\Customertab">
+    </virtualType-->
+    <!--preference for="Magento\Catalog\Ui\Component\Listing\Attribute\RepositoryInterface" type="Magento\Catalog\Ui\Component\Listing\Attribute\Repository"/-->
+    <!--virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="related" xsi:type="array">
+                    <item name="class" xsi:type="string">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Related</item>
+                    <item name="sortOrder" xsi:type="number">500</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType-->
+    <!--type name="Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool</argument>
+        </arguments>
+    </type-->
+    <!--type name="Fishpig\CdKey\Ui\DataProvider\Product\Modifier\Customertab">
         <arguments>
             <argument name="scopeName" xsi:type="string">product_form.product_form</argument>
         </arguments>
-    </type>
+    </type-->
+    <!--type name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Related">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">product_form.product_form</argument>
+        </arguments>
+    </type-->
+
+    <!--virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="test" xsi:type="array">
+                    <item name="class" xsi:type="string">Fishpig\CdKey\Ui\DataProvider\Product\Form\Modifier\Test</item>
+                    <item name="sortOrder" xsi:type="number">500</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType-->
 </config>
