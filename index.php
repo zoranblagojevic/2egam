@@ -33,6 +33,10 @@ HTML;
     exit(1);
 }
 
+
+//var_dump($_FILES);
+//echo file_exists($_FILES['files']['tmp_name']);
+//exit;
 $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication('Magento\Framework\App\Http');

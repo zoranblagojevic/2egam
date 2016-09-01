@@ -120,6 +120,50 @@ class Test extends AbstractModifier
             return $meta;
         }
 
+        //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r('KRASH',true));
+        //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($meta,true));
+        $uploadCdKeys2['arguments']['data']['config'] = [
+            'dataScope' => 'image',
+            'fileInputName' => 'image',
+            'dataType' => 'string',
+            'label' => 'uploadcsv',
+            'visible' => 'true',
+            'formElement' => 'fileUploader',
+            //            'componentType' => 'field',
+            'componentType' => 'fileUploader',
+            'component' => 'Magento_Downloadable/js/components/file-uploader',
+            'elementTmpl' => 'Magento_Downloadable/components/file-uploader',
+        //    'elementTmpl' => 'ui/form/element/uploader/uploader',
+            'allowedExtensions' => 'csv, png',
+         // 'baseTmpPath' => 'catalog/tmp/category',
+           // 'basePath' => 'catalog/category',
+            'uploaderConfig' => [
+              //  'url' => 'cdkey/cdkey/uploadcsv',
+                'url' => 'catalog/category_image/upload',
+           //     'baseTmpPath' => 'catalog/tmp/category',
+            ],
+            'sortOrder' => 30,
+        ];
+
+        /*$uploadCdKeys['arguments']['data']['config'] = [
+            'displayAsLink' => true,
+            'formElement' => 'container',
+            'componentType' => 'container',
+            'component' => 'Magento_Ui/js/form/components/button',
+            'template' => 'ui/form/components/button/container',
+            'actions' => [
+                [
+                    'targetName' => 'product_form.product_form.upload_cdkeys',
+                    'actionName' => 'toggleModal',
+                ],
+            ],
+            'title' => __('Upload CD Keys'),
+            'provider' => false,
+            'additionalForGroup' => true,
+            //'source' => 'product_details',
+            'sortOrder' => 20,
+        ];*/
+
         $meta[static::GROUP_CDKEY] = [
             'children' => [
                 'cdkey_listing' => [
@@ -146,6 +190,8 @@ class Test extends AbstractModifier
                         ],
                     ],
                 ],
+                //'upload_cdkeys' => $uploadCdKeys,
+                'test' => $uploadCdKeys2,
             ],
             'arguments' => [
                 'data' => [

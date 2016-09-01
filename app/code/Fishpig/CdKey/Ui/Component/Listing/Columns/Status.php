@@ -53,7 +53,7 @@ class Status extends Column implements OptionSourceInterface
         if (empty($dataSource['data']['items'])) {
             return $dataSource;
         }
-        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($dataSource['data']['items'],true));
+        //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($dataSource['data']['items'],true));
         foreach ($dataSource['data']['items'] as &$item) {
             if(is_null($item['item_id'])){
                 $item['status'] = $options[1];

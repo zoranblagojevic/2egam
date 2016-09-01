@@ -18,7 +18,7 @@ class CdKey extends AbstractDb
      */
     protected function _construct()
     {
-        //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r('JEBOTE BOG TA TE BOG JEBO!',true));
+        //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r('jjj',true));
        $this->_init('cdkey_key', 'key_id');
     }
 }

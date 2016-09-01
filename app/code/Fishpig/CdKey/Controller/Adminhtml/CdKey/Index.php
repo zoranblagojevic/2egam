@@ -26,6 +26,9 @@ class Index extends \Magento\Backend\App\Action
 
     public function execute()
     {
+        //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r('TU SAM',true));
+
+        //die;
         //$cdkeyModel = $this->testCollectionFactory->create();
         //$item = $cdkeyModel->load(1);
         //var_dump($item->getData());

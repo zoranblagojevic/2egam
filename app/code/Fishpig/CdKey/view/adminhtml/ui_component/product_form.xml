@@ -25,4 +25,79 @@
             </field>
         </fieldset>
     </fieldset-->
+    <!--modal name="upload_cdkeys">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataScope" xsi:type="string">data.product</item>
+                <item name="provider" xsi:type="string">product_form.product_form_data_source</item>
+                <item name="onCancel" xsi:type="string">actionCancel</item>
+                <item name="options" xsi:type="array">
+                    <item name="title" xsi:type="string">UPLOAD CD KEYS</item>
+                    <item name="buttons" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="text" xsi:type="string">Upload</item>
+                            <item name="class" xsi:type="string">action-primary</item>
+                            <item name="actions" xsi:type="array">
+                                <item name="0" xsi:type="array">
+                                        <item name="targetName" xsi:type="string">${ $.name }</item>
+                                        <item name="actionName" xsi:type="string">closeModal</item>
+                                </item>
+                                <item name="1" xsi:type="array">
+                                        <item name="targetName" xsi:type="string">${ $.name }</item>
+                                        <item name="actionName" xsi:type="string">resetFilter</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </item>
+        </argument>
+        <fieldset name="cdkupl">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string"/>
+                </item>
+            </argument>
+            <field name="txt_cd_keys">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="dataType" xsi:type="string">string</item>
+                        <item name="source" xsi:type="string">category</item>
+                        <item name="label" xsi:type="string" translate="true">Add Text CD Keys</item>
+                        <item name="visible" xsi:type="boolean">true</item>
+                        <item name="formElement" xsi:type="string">fileUploader</item>
+                        <item name="notice" xsi:type="string" translate="true">Allowed file types: jpeg, gif, png.</item>
+                        <item name="maxFileSize" xsi:type="number">2097152</item>
+                        <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png svg</item>
+                        <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                        <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                        <item name="required" xsi:type="boolean">false</item>
+                        <item name="sortOrder" xsi:type="number">40</item>
+                        <item name="uploaderConfig" xsi:type="array">
+                            <item name="url" xsi:type="url" path="catalog/category_image/upload"/>
+                            <item name="url" xsi:type="url" path="cdkey/cdkey/index"/>
+                        </item>
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
+    </modal-->
+    <field name="image">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataType" xsi:type="string">string</item>
+                <item name="source" xsi:type="string">category</item>
+                <item name="label" xsi:type="string" translate="true">Category Image</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="formElement" xsi:type="string">fileUploader</item>
+                <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                <item name="required" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="number">500</item>
+                <item name="uploaderConfig" xsi:type="array">
+                    <item name="url" xsi:type="url" path="catalog/category_image/upload"/>
+                </item>
+            </item>
+        </argument>
+    </field>
 </form>
