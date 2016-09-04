@@ -7,6 +7,43 @@
         </item>
         <item name="spinner" xsi:type="string">cdkey_columns</item>
     </argument>
+    <container name="upload_csv">
+        <field name="upload_csv">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Import csv</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="componentType" xsi:type="string">fileUploader</item>
+                    <item name="notice" xsi:type="string" translate="true">Allowed file types: csv.</item>
+                    <item name="maxFileSize" xsi:type="number">2097152</item>
+                    <item name="allowedExtensions" xsi:type="string">csv</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="string">cdkey/cdkey/uploadcsv</item>
+                    </item>
+                    <item name="dataScope" xsi:type="string">data.csv</item>
+                </item>
+            </argument>
+        </field>
+    </container>
+    <container name="test_but">
+        <button name="upsidaisy">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="title" xsi:type="string">UPLOAD CD KEYS</item>
+                    <item name="dataScope" xsi:type="string">data.product</item>
+                    <item name="provider" xsi:type="string">product_form.product_form_data_source</item>
+                    <item name="class" xsi:type="string">action-primary</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="1" xsi:type="array">
+                                <item name="targetName" xsi:type="string">${ $.name }</item>
+                                <item name="actionName" xsi:type="string">resetFilter</item>
+                            </item>
+                        </item>
+                </item>
+            </argument>
+        </button>>
+    </container>
+
     <dataSource name="cdkey_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Fishpig\CdKey\Ui\DataProvider\Product\CdKeyDataProvider</argument>
@@ -24,7 +61,7 @@
             </argument>
         </argument>
     </dataSource>
-    <field name="image">
+    <!--field name="image">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="dataType" xsi:type="string">string</item>
@@ -41,7 +78,8 @@
                 </item>
             </item>
         </argument>
-    </field>
+    </field-->
+
     <listingToolbar name="listing_top">
         <filters name="listing_filters">
             <argument name="data" xsi:type="array">
@@ -55,6 +93,8 @@
                 </item>
             </argument>
         </filters>
+
+
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

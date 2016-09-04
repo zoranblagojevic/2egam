@@ -122,7 +122,7 @@ class Test extends AbstractModifier
 
         //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r('KRASH',true));
         //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($meta,true));
-        $uploadCdKeys2['arguments']['data']['config'] = [
+        /*$uploadCdKeys2['arguments']['data']['config'] = [
             'dataScope' => 'image',
             'fileInputName' => 'image',
             'dataType' => 'string',
@@ -144,7 +144,7 @@ class Test extends AbstractModifier
             ],
             'sortOrder' => 30,
         ];
-
+*/
         /*$uploadCdKeys['arguments']['data']['config'] = [
             'displayAsLink' => true,
             'formElement' => 'container',
@@ -191,7 +191,7 @@ class Test extends AbstractModifier
                     ],
                 ],
                 //'upload_cdkeys' => $uploadCdKeys,
-                'test' => $uploadCdKeys2,
+                //'test' => $uploadCdKeys2,
             ],
             'arguments' => [
                 'data' => [

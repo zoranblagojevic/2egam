@@ -77,4 +77,25 @@
             </argument>
         </arguments>
     </virtualType-->
+    <type name="Fishpig\CdKey\Model\Test\MdataProvider">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="watermark_image_image" xsi:type="array">
+                    <!--item name="path" xsi:type="string">design/watermark/image_image</item-->
+                    <!--item name="fieldset" xsi:type="string">image</item-->
+                    <item name="backend_model" xsi:type="string">Fishpig\CdKey\Model\Test\Image</item>
+                    <item name="upload_dir" xsi:type="array">
+                        <item name="config" xsi:type="string">system/filesystem/media</item>
+                        <item name="scope_info" xsi:type="string">1</item>
+                        <item name="value" xsi:type="string">catalog/product/watermark</item>
+                    </item>
+                    <item name="base_url" xsi:type="array">
+                        <item name="type" xsi:type="string">media</item>
+                        <item name="scope_info" xsi:type="string">1</item>
+                        <item name="value" xsi:type="string">catalog/product/watermark</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>
