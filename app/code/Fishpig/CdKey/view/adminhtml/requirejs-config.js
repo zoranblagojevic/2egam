@@ -1,7 +1,7 @@
 var config = {
     map: {
         '*': {
-            test123:      'Fishpig_CdKey/js/test123'
+            button1:      'Fishpig_CdKey/js/button1'
         }
     }
 };

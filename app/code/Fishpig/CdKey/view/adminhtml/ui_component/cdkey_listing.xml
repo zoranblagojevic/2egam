@@ -7,7 +7,7 @@
         </item>
         <item name="spinner" xsi:type="string">cdkey_columns</item>
     </argument>
-    <container name="upload_csv">
+    <!--container name="upload_csv">
         <field name="upload_csv">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -24,24 +24,25 @@
                 </item>
             </argument>
         </field>
-    </container>
+    </container-->
     <container name="test_but">
-        <button name="upsidaisy">
+        <button name="test_but">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="title" xsi:type="string">UPLOAD CD KEYS</item>
-                    <item name="dataScope" xsi:type="string">data.product</item>
-                    <item name="provider" xsi:type="string">product_form.product_form_data_source</item>
+                    <item name="dataScope" xsi:type="string">data.testbut</item>
+                    <!--item name="provider" xsi:type="string">product_form.product_form_data_source</item-->
+                    <item name="component" xsi:type="string">Fishpig_CdKey/js/button1</item>
                     <item name="class" xsi:type="string">action-primary</item>
-                        <item name="actions" xsi:type="array">
-                            <item name="1" xsi:type="array">
-                                <item name="targetName" xsi:type="string">${ $.name }</item>
-                                <item name="actionName" xsi:type="string">resetFilter</item>
-                            </item>
+                    <item name="actions" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.name }</item>
+                            <item name="actionName" xsi:type="string">testFunction</item>
                         </item>
+                    </item>
                 </item>
             </argument>
-        </button>>
+        </button>
     </container>
 
     <dataSource name="cdkey_listing_data_source">
