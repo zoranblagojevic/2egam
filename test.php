@@ -1,4 +1,7 @@
 <?php //  display  file  upload  form
+echo phpinfo();
+exit;
+
 if  (!isset($_POST['submit']))  { ?>
 <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 

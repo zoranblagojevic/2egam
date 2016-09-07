@@ -99,6 +99,8 @@ class UploadCsv extends \Magento\Backend\App\Action
         } catch (\Exception $e) {
             $result = ['error' => $e->getMessage(), 'errorcode' => $e->getCode()];
         }
+        \Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($result,true));
+        //return $this;
         return $this->resultFactory->create(ResultFactory::TYPE_JSON)->setData($result);
         //$test = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\Debug')->backtrace(true,false,true);
         //\Magento\Framework\App\ObjectManager::getInstance()->get('Psr\Log\LoggerInterface')->debug(print_r($test,true));

@@ -10,9 +10,9 @@ define([
         },
 
         testFunction: function (data) {
-            console.log('testFunction 123');
+            /*console.log('testFunction 123');
             Provider1.reload(data);
-            console.log('testFunction 321');
+            console.log('testFunction 321');*/
             return this;
         }
 });
