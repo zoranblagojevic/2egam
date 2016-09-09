@@ -20,4 +20,6 @@ class CdKey extends AbstractModel
     {
         $this->_init('Fishpig\CdKey\Model\Resource\CdKey');
     }
+
+
 }

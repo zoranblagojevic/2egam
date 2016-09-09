@@ -13,6 +13,14 @@ use Magento\Directory\Controller\Currency\SwitchAction;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
+
+    /**
+     * Flag to determine whether to filter on invoice after load
+     *
+     * @var null|bool
+     */
+    protected $_invoiceFilter = null;
+
     /**
      * Review table
      *
@@ -364,6 +372,54 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         }
         return $this->_reviewStoreTable;
     }*/
+
+
+    /**
+     * Filter the collection so keys purchased with the item id are returned
+     *
+     * @return Fishpig_CdKey_Model_Mysql4_Key_Collection
+     */
+    public function addItemIdFilter($itemId)
+    {
+        $this->getSelect()->where('`koi_table`.`item_id` = ?', $itemId);
+
+        return $this;
+    }
+
+    public function addIsInvoicedFilter($flag = true)
+    {
+        $this->_invoiceFilter = $flag;
+
+        return $this;
+    }
+
+    /**
+     * Filter the collection by a product ID
+     *
+     * @param int $productId
+     * @return 	/**
+     * @return Fishpig_CdKey_Model_Mysql4_Key_Collection
+     */
+    public function addProductIdFilter($productId)
+    {
+        if (is_array($productId)) {
+            return $this->addFieldToFilter('product_id', array('in' => $productId));
+        }
+
+        return $this->addFieldToFilter('product_id', $productId);
+    }
+
+    /**
+     * Filter the collection so only available keys are returned
+     *
+     * @return Fishpig_CdKey_Model_Mysql4_Key_Collection
+     */
+    public function addIsAvailableFilter()
+    {
+        $this->getSelect()->where('`koi_table`.`item_id` IS NULL');
+
+        return $this;
+    }
 
 
 }

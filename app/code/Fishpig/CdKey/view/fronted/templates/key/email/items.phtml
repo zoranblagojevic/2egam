@@ -1,0 +1,27 @@
+<?php
+/**
+ *
+ */
+?>
+<?php $keys = $this->getKeys() ?>
+<?php $keyCount = count($keys) ?>
+<?php if ($keyCount > 0): ?>
+    <table width="100%" cellpadding="8" cellspacing="0">
+        <tbody>
+        <?php foreach($keys as $key): ?>
+            <tr>
+                <td style="<?php if (--$keyCount > 0): ?>border-bottom:1px solid #e4e4e4;<?php else: ?>padding-bottom:0px;<?php endif; ?>">
+                    <p style="font-size:12px;margin:0;"><strong><?php echo $key->getProduct()->getName() ?></strong></p>
+                    <p style="font-size:12px;margin:0;">
+                        <?php if ($key->isImageFormat()): ?>
+                            <?php echo $this->__('Key: %s', basename($key->getKey(), substr($key->getKey(), strrpos($key->getKey(), '.')))) ?><br/><br/><a href="<?php echo $key->getDownloadUrl() ?>" style="color:#000;"><?php echo $this->__('Download as Image') ?></a>
+                        <?php else: ?>
+                            <?php echo $this->__('Key: %s', $key->getKey()) ?>
+                        <?php endif; ?>
+                    </p>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>

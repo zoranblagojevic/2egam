@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--event name="sales_order_place_before">
+        <observer name="fishpig_cdkey_sales_order_place_before" instance="Fishpig\CdKey\Observer\Observer"/>
+    </event-->
+    <event name="sales_order_save_before">
+        <observer name="fishpig_cdkey_sales_order_save_before" instance="Fishpig\CdKey\Observer\SetOrderStatusObserver"/>
+    </event>
+    <event name="sales_order_item_save_before">
+        <observer name="fishpig_cdkey_sales_order_item_save_before" instance="Fishpig\CdKey\Observer\ReserveKeyFlagObserver"/>
+    </event>
+    <event name="sales_order_item_save_after">
+        <observer name="fishpig_cdkey_sales_order_item_save_after" instance="Fishpig\CdKey\Observer\ReserveKeysObserver"/>
+    </event>
+    <event name="sales_order_invoice_register">
+        <observer name="fishpig_cdkey_sales_order_invoice_register" instance="Fishpig\CdKey\Observer\SendEmailObserver"/>
+    </event>
+    <event name="sales_order_save_after">
+        <observer name="fishpig_cdkey_sales_order_save_after" instance="Fishpig\CdKey\Observer\CancelKeysObserver"/>
+    </event>
+    <event name="sales_creditmemo_item_save_before">
+        <observer name="fishpig_cdkey_sales_creditmemo_item_save_before" instance="Fishpig\CdKey\Observer\SetRefundFlagObserver"/>
+    </event>
+    <event name="sales_creditmemo_item_save_after">
+        <observer name="fishpig_cdkey_sales_creditmemo_item_save_after" instance="Fishpig\CdKey\Observer\RefundKeysObserver"/>
+    </event>
+    <!--event name="my_module_event_after">
+        <observer name="myObserverName" instance="MyCompany\MyModule\Observer\AnotherObserver" />
+    </event>
+    <event name="controller_front_send_response_before">
+        <observer name="belvg_verpage_controller_front_send_response_before" instance="BelVG\Verpage\Model\Observer" method="verificate" />
+    </event-->
+</config>
