@@ -49,7 +49,7 @@ class Data extends AbstractHelper
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\Escaper $escaper,
         \Magento\Framework\Filter\FilterManager $filter,
-        \Magento\Catalog\Module\ResourceModel\Product $productResourceModel,
+        \Magento\Catalog\Model\ResourceModel\Product $productResourceModel,
         \Magento\Store\Model\StoreManager $storeManager,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Sales\Model\ResourceModel\Order\Item\CollectionFactory $orderItemCollectionFactory
